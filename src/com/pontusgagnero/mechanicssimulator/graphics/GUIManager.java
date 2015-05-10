@@ -1,4 +1,6 @@
-package java.com.pontusgagnero.mechanicssimulator.graphics;
+package com.pontusgagnero.mechanicssimulator.graphics;
+
+import com.pontusgagnero.mechanicssimulator.graphics.PanelTypes.MenuPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,11 +13,12 @@ import java.awt.*;
 public class GUIManager extends JFrame {
 
     public GUIManager(String title) {
+        Dimension windowSize = new Dimension(800,600);
         this.setTitle(title);
         this.setLocation(0, 0);
-        this.setSize(800, 600);
-        this.setVisible(true);
-
+	    this.setMinimumSize(windowSize);
+	    this.setVisible(true);
+        add(new MenuPanel(windowSize));
 
     }
 

@@ -1,4 +1,4 @@
-package java.com.pontusgagnero.mechanicssimulator.graphics.PanelTypes;
+package com.pontusgagnero.mechanicssimulator.graphics.PanelTypes;
 
 import javax.swing.*;
 

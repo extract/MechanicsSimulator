@@ -1,6 +1,7 @@
-package java.com.pontusgagnero.mechanicssimulator;
+package com.pontusgagnero.mechanicssimulator;
 
-import java.com.pontusgagnero.mechanicssimulator.graphics.*;
+import com.pontusgagnero.mechanicssimulator.graphics.GUIManager;
+
 /**
  * Created by extract on 2015-05-10.
  */

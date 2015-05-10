@@ -1,4 +1,4 @@
-package java.com.pontusgagnero.mechanicssimulator;
+package com.pontusgagnero.mechanicssimulator;
 
 /**
  * Created by extract on 2015-05-10.

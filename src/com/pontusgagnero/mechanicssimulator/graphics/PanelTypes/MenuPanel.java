@@ -1,5 +1,6 @@
 package com.pontusgagnero.mechanicssimulator.graphics.PanelTypes;
 
+import com.pontusgagnero.mechanicssimulator.graphics.GUIManager;
 import javafx.application.Application;
 
 import javax.swing.*;
@@ -18,15 +19,18 @@ public class MenuPanel extends JPanel {
 	private JButton startButton;
 	private JButton optionsButton;
 	private JButton exitButton;
+	private GUIManager _init;
 
-	public MenuPanel(Dimension windowSize) {
+	public MenuPanel(Dimension windowSize, GUIManager init) {
+		_init = init;
+		_init.runSimulation();
 		this.setBackground(new Color(0.1f, 0.1f, 0.1f));
 		this.setPreferredSize(windowSize);
 		//this.setLayout(new FlowLayout());
 		this.setVisible(true);
 		createTitle("Mechanics simulator");
-		/*createButton("Start");
-		createButton("Options");*/
+		createButton("Start", 1);
+		createButton("Options", 2);
 		createButton("Exit", 0);
 
 	}

@@ -1,4 +1,5 @@
 package com.pontusgagnero.mechanicssimulator.graphics;
+import com.pontusgagnero.mechanicssimulator.graphics.PanelTypes.GraphicsPanel;
 import com.pontusgagnero.mechanicssimulator.graphics.PanelTypes.MenuPanel;
 import javax.swing.*;
 import java.awt.*;
@@ -13,6 +14,12 @@ public class GUIManager extends JFrame {
 		this.setMinimumSize(windowSize);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
-		add(new MenuPanel(windowSize));
+		add(new MenuPanel(windowSize, this));
+	}
+
+	public void runSimulation(){
+		add(new GraphicsPanel());
+		repaint();
+		validate();
 	}
 }

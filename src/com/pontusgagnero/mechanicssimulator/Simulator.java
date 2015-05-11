@@ -9,6 +9,6 @@ import java.awt.*;
  */
 public class Simulator {
 	public Simulator(String title, Dimension windowSize){
-		new GUIManager(title, windowSize);
+		GUIManager GUI = new GUIManager(title, windowSize);
 	}
 }

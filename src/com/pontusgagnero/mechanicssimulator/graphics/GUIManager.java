@@ -11,6 +11,7 @@ public class GUIManager extends JFrame {
 		this.setTitle(title);
 		this.setLocation(0, 0);
 		this.setMinimumSize(windowSize);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
 		add(new MenuPanel(windowSize));
 	}

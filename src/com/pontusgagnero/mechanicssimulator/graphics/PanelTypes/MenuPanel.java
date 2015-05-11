@@ -5,7 +5,10 @@ import javafx.application.Application;
 import javax.swing.*;
 import java.awt.*;
 
+import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
+import java.beans.PropertyChangeListener;
+import java.util.concurrent.Callable;
 
 /**
  * Created by extract on 2015-05-10.
@@ -13,6 +16,8 @@ import java.awt.event.KeyEvent;
 public class MenuPanel extends JPanel {
 	private JLabel textHeader;
 	private JButton startButton;
+	private JButton optionsButton;
+	private JButton exitButton;
 
 	public MenuPanel(Dimension windowSize) {
 		this.setBackground(new Color(0.1f, 0.1f, 0.1f));
@@ -20,7 +25,9 @@ public class MenuPanel extends JPanel {
 		//this.setLayout(new FlowLayout());
 		this.setVisible(true);
 		createTitle("Mechanics simulator");
-		createStartButton();
+		/*createButton("Start");
+		createButton("Options");*/
+		createButton("Exit", 0);
 
 	}
 
@@ -31,47 +38,11 @@ public class MenuPanel extends JPanel {
 		add(textHeader);
 	}
 
-	public void createStartButton() {
-		startButton = new JButton("Start simulation");
+	public void createButton(String s, int action) {
+		startButton = new JButton(s);
 		startButton.setForeground(Color.white);
-		startButton.setMnemonic(KeyEvent.VK_S);
-		/*startButton.setAction(new Action() {
-			@Override
-			public Object getValue(String key) {
-				return null;
-			}
+		//startButton.setMnemonic(KeyEvent.VK_S);
 
-			@Override
-			public void putValue(String key, Object value) {
-
-			}
-
-			@Override
-			public void setEnabled(boolean b) {
-
-			}
-
-			@Override
-			public boolean isEnabled() {
-				return false;
-			}
-
-			@Override
-			public void addPropertyChangeListener(PropertyChangeListener listener) {
-
-			}
-
-			@Override
-			public void removePropertyChangeListener(PropertyChangeListener listener) {
-
-			}
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				this.setEnabled(false);
-			}
-		});*/
-		//setBackground(Color.DARK_GRAY);
 		add(startButton);
 	}
 }

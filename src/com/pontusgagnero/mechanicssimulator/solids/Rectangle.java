@@ -9,55 +9,59 @@ import java.awt.*;
  * For example, if a physicsbody uses this, it will change it's dimensions but if a staticbody uses it it will not.
  */
 
-public class Rectangle extends SimObject {
-	private int _x, _y, _width, _height;
+public class Rectangle extends Solid {
+	private float _x, _y, _width, _height;
 	private Color _color;
 
-	void paint( Graphics g ) {
+	public void paint( Graphics g ) {
+		// Save the previous color and set it after so if a class forgot to put a color it will be put in the default color
+		Color temp = g.getColor();
 
-		g.drawRect(_x, _y, _width, _height);
+		g.setColor(_color);
+		g.fillRect((int)_x, (int)_y, (int)_width, (int)_height);
+
+		g.setColor(temp);
 	}
 
-	public Rectangle(int positionX, int positionY, int width, int height, Color color) {
-		_x = positionX;
-		_y = positionY;
+	public Rectangle() {
 
-		_width = width;
-		_height = height;
-
-		_color = color;
 
 	}
 
-	public int getX() {
+	public float getX() {
 		return _x;
 	}
 
-	public void setX(int _x) {
+	public void setX(float _x) {
 		this._x = _x;
 	}
 
-	public int getY() {
+	public float getY() {
 		return _y;
 	}
 
-	public void setY(int _y) {
+	public void setY(float _y) {
 		this._y = _y;
 	}
 
-	public int getWidth() {
+	public float getWidth() {
 		return _width;
 	}
 
-	public void setWidth(int _width) {
+	public void setWidth(float _width) {
 		this._width = _width;
 	}
 
-	public int getHeight() {
+	public float getHeight() {
 		return _height;
 	}
 
-	public void setHeight(int _height) {
+	@Override
+	public void setColor(Color color) {
+		_color = color;
+	}
+
+	public void setHeight(float _height) {
 		this._height = _height;
 	}
 }

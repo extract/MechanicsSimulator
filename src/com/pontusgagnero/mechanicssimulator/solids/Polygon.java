@@ -33,6 +33,11 @@ public class Polygon extends Solid {
 	}
 
 	@Override
+	public void setLocalRotation(double localRotation) {
+
+	}
+
+	@Override
 	public float getX() {
 		return 0;
 	}
@@ -49,6 +54,11 @@ public class Polygon extends Solid {
 
 	@Override
 	public float getHeight() {
+		return 0;
+	}
+
+	@Override
+	public double getLocalRotation() {
 		return 0;
 	}
 

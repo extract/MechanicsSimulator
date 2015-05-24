@@ -27,6 +27,7 @@ public abstract class Engine {
 	public void update() {
 
 	}
+	public abstract void jump();
 
 	public Object getDeltaTime() {
 		return _deltaTime;

@@ -9,11 +9,13 @@ import javax.swing.Timer;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 /**
  * Created by extract on 2015-05-10.
  */
-public class GraphicsPanel extends JPanel implements ActionListener {
+public class GraphicsPanel extends JPanel implements ActionListener, MouseListener {
 	private Timer _timer;
 	private Dimension _windowSize;
 
@@ -43,7 +45,7 @@ public class GraphicsPanel extends JPanel implements ActionListener {
 		_targetFramerate = _engine.getFramerate();
 
 		_windowSize = windowSize;
-
+		this.addMouseListener(this);
 		this.setBackground(Color.red);
 		this.setVisible(true);
 		// Don't you hate it when libraries use words that are common?
@@ -64,6 +66,32 @@ public class GraphicsPanel extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 
 		update();
+
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		_engine.jump();
+		System.out.println("help");
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
 
 	}
 }

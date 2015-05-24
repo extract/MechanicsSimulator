@@ -13,13 +13,17 @@ public class Rectangle extends Solid {
 	private float _x, _y, _width, _height;
 	private Color _color;
 
+	private double _localRotation = 0;
+
 	public void paint( Graphics g ) {
 		// Save the previous color and set it after so if a class forgot to put a color it will be put in the default color
 		Color temp = g.getColor();
-
 		g.setColor(_color);
-		g.fillRect((int)_x, (int)_y, (int)_width, (int)_height);
+		Graphics2D gg = (Graphics2D)g.create();
+		gg.rotate(_localRotation, _x + _width / 2, _y + _height / 2);
+		gg.fillRect((int) _x, (int) _y, (int) _width, (int)_height);
 
+		gg.dispose();
 		g.setColor(temp);
 	}
 
@@ -63,5 +67,13 @@ public class Rectangle extends Solid {
 
 	public void setHeight(float _height) {
 		this._height = _height;
+	}
+
+	public double getLocalRotation() {
+		return _localRotation;
+	}
+
+	public void setLocalRotation(double _localRotation) {
+		this._localRotation = _localRotation;
 	}
 }

@@ -11,8 +11,9 @@ import java.awt.*;
 public class Simulator {
 	private Engine _engine;
 
+
 	public Simulator(String title, Dimension windowSize){
-		_engine = new PhysM();
+		_engine = new PhysM(60f);
 		GUIManager GUI = new GUIManager(title, windowSize, _engine);
 	}
 }
